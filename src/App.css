@@ -1,38 +1,79 @@
-.App {
-  text-align: center;
+Nav{
+  padding: 0 1rem;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Main{
+  min-height: calc(100vh - 70px - 62px);
+  padding: 1.5rem;
 }
+.goods{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+.search-btn{
+  position: absolute;
+  top: 15px;
+  right: 1rem;
+}
+.cart{
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  cursor: pointer;
+  z-index: 5;
+  padding: 1rem;
+}
+@media (min-width: 767px) {
+  .cart{
+    top: 5rem;
+    bottom: unset;
   }
 }
+.cart-quantity{
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.basket-list{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  width: 50rem;
+  max-width: 95%;
+  z-index: 6;
+  animation: show 500ms ease-in-out;
+}
+.basket-close{
+  cursor: pointer;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: #ffffff;
+}
+.basket-delete{
+  cursor: pointer;
+}
+.changeQuantityBtn{
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: #26a69a;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes show {
   from {
-    transform: rotate(0deg);
+    top: 70%;
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  to{
+    top: 50%;
+    opacity: 1;
   }
 }
+
+
+
+
+
